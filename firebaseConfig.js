@@ -5,7 +5,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBI0qRFhFtmssnzrdASpOuCer1i3hPNsxtY",
+  apiKey: "AIzaSyBI0qRFhFtmsnzrdASpOuCer1i3hPNsxtY",
   authDomain: "robo-nao-app.firebaseapp.com",
   projectId: "robo-nao-app",
   storageBucket: "robo-nao-app.firebasestorage.app",
