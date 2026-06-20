@@ -2,6 +2,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  deleteUser,
 } from "firebase/auth";
 
 import { auth } from "../firebaseConfig";
@@ -24,4 +25,13 @@ export async function logout() {
 // Usuário logado
 export function usuarioAtual() {
   return auth.currentUser;
+}
+
+// Excluir conta do Authentication
+export async function excluirConta() {
+
+  if (!auth.currentUser) return;
+
+  await deleteUser(auth.currentUser);
+
 }
