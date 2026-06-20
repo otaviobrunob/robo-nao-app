@@ -1,14 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  Alert,
+  ActivityIndicator,
 } from "react-native";
 
+import { login } from "../services/authService";
+
 export default function LoginScreen({ navigation }) {
+
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function fazerLogin() {
+
+    if (!email || !senha) {
+      Alert.alert("Atenção", "Preencha todos os campos.");
+      return;
+    }
+
+    try {
+
+      setLoading(true);
+
+      await login(email, senha);
+
+      navigation.replace("Perfil");
+
+    } catch (error) {
+
+      let mensagem = "Erro ao realizar login.";
+
+      switch (error.code) {
+
+        case "auth/invalid-credential":
+        case "auth/wrong-password":
+        case "auth/user-not-found":
+          mensagem = "E-mail ou senha inválidos.";
+          break;
+
+        case "auth/invalid-email":
+          mensagem = "E-mail inválido.";
+          break;
+
+        default:
+          mensagem = error.message;
+
+      }
+
+      Alert.alert("Erro", mensagem);
+
+    } finally {
+
+      setLoading(false);
+
+    }
+
+  }
+
   return (
+
     <View style={styles.container}>
 
       <Text style={styles.title}>
@@ -22,18 +78,32 @@ export default function LoginScreen({ navigation }) {
       <TextInput
         placeholder="E-mail"
         style={styles.input}
+        autoCapitalize="none"
+        value={email}
+        onChangeText={setEmail}
       />
 
       <TextInput
         placeholder="Senha"
         secureTextEntry
         style={styles.input}
+        value={senha}
+        onChangeText={setSenha}
       />
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>
-          Entrar
-        </Text>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={fazerLogin}
+      >
+
+        {loading ? (
+          <ActivityIndicator color="#FFF" />
+        ) : (
+          <Text style={styles.buttonText}>
+            Entrar
+          </Text>
+        )}
+
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -45,7 +115,9 @@ export default function LoginScreen({ navigation }) {
       </TouchableOpacity>
 
     </View>
+
   );
+
 }
 
 const styles = StyleSheet.create({

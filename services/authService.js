@@ -20,3 +20,8 @@ export async function login(email, senha) {
 export async function logout() {
   return await signOut(auth);
 }
+
+// Usuário logado
+export function usuarioAtual() {
+  return auth.currentUser;
+}

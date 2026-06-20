@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import { cadastrar } from "../services/authService";
+import { salvarUsuario } from "../services/firestoreService";
 
 export default function CadastroScreen({ navigation }) {
 
@@ -34,7 +35,13 @@ export default function CadastroScreen({ navigation }) {
 
       setLoading(true);
 
-      await cadastrar(email, senha);
+      const credencial = await cadastrar(email, senha);
+
+ await salvarUsuario({
+  uid: credencial.user.uid,
+  nome,
+  email,
+});
 
       Alert.alert(
         "Sucesso",
