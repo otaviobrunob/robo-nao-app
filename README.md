@@ -6,6 +6,16 @@ O sistema permite autenticação de usuários, gerenciamento do perfil do terape
 
 ---
 
+# 👨‍💻 Desenvolvedor
+
+Otávio Bruno Barbosa de Oliveira
+
+Disciplina: Engenharia de Aplicações Móveis
+
+PUC Minas
+
+--- 
+
 # 📱 Funcionalidades
 
 ## Autenticação
@@ -147,11 +157,3 @@ Leia o QR Code utilizando o aplicativo **Expo Go**.
 
 
 ---
-
-# 👨‍💻 Desenvolvedor
-
-Otávio Bruno Barbosa de Oliveira
-
-Disciplina: Engenharia de Aplicações Móveis
-
-PUC Minas
