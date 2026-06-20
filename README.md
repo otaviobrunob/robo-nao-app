@@ -124,6 +124,30 @@ Leia o QR Code utilizando o aplicativo **Expo Go**.
 
 ---
 
+# 📸 Telas do Aplicativo
+
+## Login
+
+<img width="739" height="1600" alt="Login" src="https://github.com/user-attachments/assets/d5216bcf-153d-4215-ac8b-41e8ada16321" />
+
+
+## Cadastro
+
+<img width="739" height="1600" alt="Cadastro" src="https://github.com/user-attachments/assets/352a6bd6-d8af-49dd-99e0-8e3ac2487b1f" />
+
+
+## Perfil
+
+<img width="739" height="1600" alt="Perfil" src="https://github.com/user-attachments/assets/183931cb-2e13-4fac-91cc-a3a1ca707403" />
+
+
+## Comandos
+
+<img width="739" height="1600" alt="Comandos" src="https://github.com/user-attachments/assets/616ac63f-201c-464e-a481-64681bcb3564" />
+
+
+---
+
 # 👨‍💻 Desenvolvedor
 
 Otávio Bruno Barbosa de Oliveira
